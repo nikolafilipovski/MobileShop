@@ -1,0 +1,253 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Repository\\MobileShop.Repository.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Data\\MobileShop.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Data\\MobileShop.Data.csproj",
+        "projectName": "MobileShop.Data",
+        "projectPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Data\\MobileShop.Data.csproj",
+        "packagesPath": "C:\\Users\\Matej & Marko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Matej & Marko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Entities\\MobileShop.Entities.csproj": {
+                "projectPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Entities\\MobileShop.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Entities\\MobileShop.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Entities\\MobileShop.Entities.csproj",
+        "projectName": "MobileShop.Entities",
+        "projectPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Entities\\MobileShop.Entities.csproj",
+        "packagesPath": "C:\\Users\\Matej & Marko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Matej & Marko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Repository\\MobileShop.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Repository\\MobileShop.Repository.csproj",
+        "projectName": "MobileShop.Repository",
+        "projectPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Repository\\MobileShop.Repository.csproj",
+        "packagesPath": "C:\\Users\\Matej & Marko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Matej & Marko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Data\\MobileShop.Data.csproj": {
+                "projectPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Data\\MobileShop.Data.csproj"
+              },
+              "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Entities\\MobileShop.Entities.csproj": {
+                "projectPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Entities\\MobileShop.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
