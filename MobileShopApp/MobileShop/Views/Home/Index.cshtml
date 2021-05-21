@@ -1,8 +1,40 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<MobileShop.Entities.Phone>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Search section -->
+
+<form asp-action="Search">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 offset-3">
+            <button class="btn searchIcon" style="">
+                <i class="fas fa-search"></i>
+            </button>
+            <input type="text" class="form-control inputBar" />
+            <button class="btn btn-success searchBtn">Search</button>
+        </div>
+    </div>
+</form>
+
+<!-- Phones section -->
+
+<div class="row">
+    @foreach (var phone in Model)
+     {
+     <div class="col-sm-12 col-md-4">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="~/img/@phone.PhotoURL" alt="Avatar" style="width:300px;height:300px;">
+                </div>
+                <div class="flip-card-back">
+                    <h1>@phone.Model</h1>
+                    <p>@phone.Display</p>
+                    <p>@phone.Battery</p>
+                    <p>@phone.Memory</p>
+                    <h4>@phone.Price</h4>
+                </div>
+            </div>
+        </div>
+
+     </div>
+     }
 </div>

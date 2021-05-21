@@ -1,3 +1,6 @@
+C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\obj\Debug\netcoreapp3.1\MobileShop.Repository.AssemblyInfoInputs.cache
+C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\obj\Debug\netcoreapp3.1\MobileShop.Repository.AssemblyInfo.cs
+C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\obj\Debug\netcoreapp3.1\MobileShop.Repository.csproj.CoreCompileInputs.cache
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\bin\Debug\netcoreapp3.1\MobileShop.Repository.deps.json
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\bin\Debug\netcoreapp3.1\MobileShop.Repository.runtimeconfig.json
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\bin\Debug\netcoreapp3.1\MobileShop.Repository.runtimeconfig.dev.json
@@ -8,9 +11,6 @@ C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\bin\Debug\netcoreapp3.1\MobileShop.Data.pdb
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\bin\Debug\netcoreapp3.1\MobileShop.Entities.pdb
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\obj\Debug\netcoreapp3.1\MobileShop.Repository.csprojAssemblyReference.cache
-C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\obj\Debug\netcoreapp3.1\MobileShop.Repository.AssemblyInfoInputs.cache
-C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\obj\Debug\netcoreapp3.1\MobileShop.Repository.AssemblyInfo.cs
-C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\obj\Debug\netcoreapp3.1\MobileShop.Repository.csproj.CoreCompileInputs.cache
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\obj\Debug\netcoreapp3.1\MobileShop.Repository.csproj.CopyComplete
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\obj\Debug\netcoreapp3.1\MobileShop.Repository.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Repository\obj\Debug\netcoreapp3.1\MobileShop.Repository.pdb

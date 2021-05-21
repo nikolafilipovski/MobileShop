@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MobileShop.Data.Migrations
 {
-    public partial class Initial2 : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -52,8 +52,8 @@ namespace MobileShop.Data.Migrations
                 {
                     ManufactuterID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true),
-                    Country = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(maxLength: 20, nullable: true),
+                    Country = table.Column<string>(maxLength: 20, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -172,22 +172,48 @@ namespace MobileShop.Data.Migrations
                 {
                     PhoneID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Model = table.Column<string>(nullable: true),
-                    Price = table.Column<string>(nullable: true),
-                    Display = table.Column<string>(nullable: true),
-                    Memory = table.Column<string>(nullable: true),
-                    Battery = table.Column<string>(nullable: true),
-                    ManufacturerID = table.Column<int>(nullable: false)
+                    Model = table.Column<string>(maxLength: 50, nullable: true),
+                    Price = table.Column<string>(maxLength: 20, nullable: true),
+                    Display = table.Column<string>(maxLength: 50, nullable: true),
+                    Memory = table.Column<string>(maxLength: 50, nullable: true),
+                    Battery = table.Column<string>(maxLength: 50, nullable: true),
+                    PhotoURL = table.Column<string>(nullable: true),
+                    Manufacturer = table.Column<string>(nullable: true),
+                    ManufacturerManufactuterID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Phones", x => x.PhoneID);
                     table.ForeignKey(
-                        name: "FK_Phones_Manufacturers_ManufacturerID",
-                        column: x => x.ManufacturerID,
+                        name: "FK_Phones_Manufacturers_ManufacturerManufactuterID",
+                        column: x => x.ManufacturerManufactuterID,
                         principalTable: "Manufacturers",
                         principalColumn: "ManufactuterID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Manufacturers",
+                columns: new[] { "ManufactuterID", "Country", "Name" },
+                values: new object[,]
+                {
+                    { 8, "South Korea", "Samsung" },
+                    { 9, "USA", "Apple" },
+                    { 10, "Taiwan", "Asus" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Phones",
+                columns: new[] { "PhoneID", "Battery", "Display", "Manufacturer", "ManufacturerManufactuterID", "Memory", "Model", "PhotoURL", "Price" },
+                values: new object[,]
+                {
+                    { 1, "4000 mAh Littium", "Dinamic Amoled 6.2 inches", null, null, "256GB, 8GB RAM", "Samsung S21", null, "60000 ден." },
+                    { 2, "4000 mAh Littium", "Dinamic Amoled 6.8 inches", null, null, "512GB, 8GB RAM", "Samsung Note 20", null, "64000 ден." },
+                    { 3, "4000 mAh Littium", "Dinamic Amoled 5.0 inches", null, null, "128GB, 4GB RAM", "Samsung A01 Core", null, "5000 ден." },
+                    { 4, "3000 mAh Littium", "OLED 6.1 inches", null, null, "128GB, 8GB RAM", "IPhone 12 Pro", null, "70000 ден." },
+                    { 5, "3500 mAh Littium", "OLED 6.3 inches", null, null, "128GB, 8GB RAM", "IPhone 12 Pro Max", null, "72000 ден." },
+                    { 6, "2500 mAh Littium", "OLED 5.4 inches", null, null, "128GB, 8GB RAM", "IPhone 12 Mini", null, "45000 ден." },
+                    { 7, "5000 mAh Littium", "Dinamic Amoled 5.0 inches", null, null, "1TB, 16GB RAM", "Asus ROG", null, "48000 ден." }
                 });
 
             migrationBuilder.CreateIndex(
@@ -230,9 +256,9 @@ namespace MobileShop.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Phones_ManufacturerID",
+                name: "IX_Phones_ManufacturerManufactuterID",
                 table: "Phones",
-                column: "ManufacturerID");
+                column: "ManufacturerManufactuterID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -237,6 +237,26 @@ namespace MobileShop.Data.Migrations
                     b.HasKey("ManufactuterID");
 
                     b.ToTable("Manufacturers");
+
+                    b.HasData(
+                        new
+                        {
+                            ManufactuterID = 8,
+                            Country = "South Korea",
+                            Name = "Samsung"
+                        },
+                        new
+                        {
+                            ManufactuterID = 9,
+                            Country = "USA",
+                            Name = "Apple"
+                        },
+                        new
+                        {
+                            ManufactuterID = 10,
+                            Country = "Taiwan",
+                            Name = "Asus"
+                        });
                 });
 
             modelBuilder.Entity("MobileShop.Entities.Phone", b =>
@@ -254,7 +274,10 @@ namespace MobileShop.Data.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<int>("ManufacturerID")
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ManufacturerManufactuterID")
                         .HasColumnType("int");
 
                     b.Property<string>("Memory")
@@ -265,15 +288,83 @@ namespace MobileShop.Data.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
+                    b.Property<string>("PhotoURL")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Price")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
                     b.HasKey("PhoneID");
 
-                    b.HasIndex("ManufacturerID");
+                    b.HasIndex("ManufacturerManufactuterID");
 
                     b.ToTable("Phones");
+
+                    b.HasData(
+                        new
+                        {
+                            PhoneID = 1,
+                            Battery = "4000 mAh Littium",
+                            Display = "Dinamic Amoled 6.2 inches",
+                            Memory = "256GB, 8GB RAM",
+                            Model = "Samsung S21",
+                            Price = "60000 ден."
+                        },
+                        new
+                        {
+                            PhoneID = 2,
+                            Battery = "4000 mAh Littium",
+                            Display = "Dinamic Amoled 6.8 inches",
+                            Memory = "512GB, 8GB RAM",
+                            Model = "Samsung Note 20",
+                            Price = "64000 ден."
+                        },
+                        new
+                        {
+                            PhoneID = 3,
+                            Battery = "4000 mAh Littium",
+                            Display = "Dinamic Amoled 5.0 inches",
+                            Memory = "128GB, 4GB RAM",
+                            Model = "Samsung A01 Core",
+                            Price = "5000 ден."
+                        },
+                        new
+                        {
+                            PhoneID = 4,
+                            Battery = "3000 mAh Littium",
+                            Display = "OLED 6.1 inches",
+                            Memory = "128GB, 8GB RAM",
+                            Model = "IPhone 12 Pro",
+                            Price = "70000 ден."
+                        },
+                        new
+                        {
+                            PhoneID = 5,
+                            Battery = "3500 mAh Littium",
+                            Display = "OLED 6.3 inches",
+                            Memory = "128GB, 8GB RAM",
+                            Model = "IPhone 12 Pro Max",
+                            Price = "72000 ден."
+                        },
+                        new
+                        {
+                            PhoneID = 6,
+                            Battery = "2500 mAh Littium",
+                            Display = "OLED 5.4 inches",
+                            Memory = "128GB, 8GB RAM",
+                            Model = "IPhone 12 Mini",
+                            Price = "45000 ден."
+                        },
+                        new
+                        {
+                            PhoneID = 7,
+                            Battery = "5000 mAh Littium",
+                            Display = "Dinamic Amoled 5.0 inches",
+                            Memory = "1TB, 16GB RAM",
+                            Model = "Asus ROG",
+                            Price = "48000 ден."
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -329,11 +420,9 @@ namespace MobileShop.Data.Migrations
 
             modelBuilder.Entity("MobileShop.Entities.Phone", b =>
                 {
-                    b.HasOne("MobileShop.Entities.Manufacturer", "Manufacturer")
+                    b.HasOne("MobileShop.Entities.Manufacturer", null)
                         .WithMany("Phones")
-                        .HasForeignKey("ManufacturerID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ManufacturerManufactuterID");
                 });
 #pragma warning restore 612, 618
         }

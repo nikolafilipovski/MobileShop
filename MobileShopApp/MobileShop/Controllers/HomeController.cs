@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MobileShop.Entities;
 using MobileShop.Models;
+using MobileShop.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,15 +14,18 @@ namespace MobileShop.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IPhoneService _phoneService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IPhoneService phoneService)
         {
             _logger = logger;
+            _phoneService = phoneService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var phones = _phoneService.GetPhones();
+            return View(phones);
         }
 
         public IActionResult Privacy()
