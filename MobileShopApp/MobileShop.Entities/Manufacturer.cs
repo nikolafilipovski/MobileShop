@@ -15,6 +15,8 @@ namespace MobileShop.Entities
 
         [StringLength(20)]
         public string Country { get; set; }
+        public string PhotoURL { get; set; }
+
         public ICollection<Phone> Phones { get; set; }
     }
 }

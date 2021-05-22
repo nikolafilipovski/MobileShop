@@ -53,7 +53,8 @@ namespace MobileShop.Data.Migrations
                     ManufactuterID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(maxLength: 20, nullable: true),
-                    Country = table.Column<string>(maxLength: 20, nullable: true)
+                    Country = table.Column<string>(maxLength: 20, nullable: true),
+                    PhotoURL = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -194,12 +195,12 @@ namespace MobileShop.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Manufacturers",
-                columns: new[] { "ManufactuterID", "Country", "Name" },
+                columns: new[] { "ManufactuterID", "Country", "Name", "PhotoURL" },
                 values: new object[,]
                 {
-                    { 8, "South Korea", "Samsung" },
-                    { 9, "USA", "Apple" },
-                    { 10, "Taiwan", "Asus" }
+                    { 1, "South Korea", "Samsung", "Logo-Samsung.png" },
+                    { 2, "USA", "Apple", "apple.png" },
+                    { 3, "Taiwan", "Asus", "Asus-Logo.png" }
                 });
 
             migrationBuilder.InsertData(
@@ -207,13 +208,13 @@ namespace MobileShop.Data.Migrations
                 columns: new[] { "PhoneID", "Battery", "Display", "Manufacturer", "ManufacturerManufactuterID", "Memory", "Model", "PhotoURL", "Price" },
                 values: new object[,]
                 {
-                    { 1, "4000 mAh Littium", "Dinamic Amoled 6.2 inches", null, null, "256GB, 8GB RAM", "Samsung S21", null, "60000 ден." },
-                    { 2, "4000 mAh Littium", "Dinamic Amoled 6.8 inches", null, null, "512GB, 8GB RAM", "Samsung Note 20", null, "64000 ден." },
-                    { 3, "4000 mAh Littium", "Dinamic Amoled 5.0 inches", null, null, "128GB, 4GB RAM", "Samsung A01 Core", null, "5000 ден." },
-                    { 4, "3000 mAh Littium", "OLED 6.1 inches", null, null, "128GB, 8GB RAM", "IPhone 12 Pro", null, "70000 ден." },
-                    { 5, "3500 mAh Littium", "OLED 6.3 inches", null, null, "128GB, 8GB RAM", "IPhone 12 Pro Max", null, "72000 ден." },
-                    { 6, "2500 mAh Littium", "OLED 5.4 inches", null, null, "128GB, 8GB RAM", "IPhone 12 Mini", null, "45000 ден." },
-                    { 7, "5000 mAh Littium", "Dinamic Amoled 5.0 inches", null, null, "1TB, 16GB RAM", "Asus ROG", null, "48000 ден." }
+                    { 1, "4000 mAh Littium", "Dinamic Amoled 6.2 inches", "Samsung", null, "256GB, 8GB RAM", "Samsung S21", "galaxys215g-336174.jpg", "60000 ден." },
+                    { 2, "4000 mAh Littium", "Dinamic Amoled 6.8 inches", "Samsung", null, "512GB, 8GB RAM", "Samsung Note 20", "galaxynote20-398247.jpg", "64000 ден." },
+                    { 3, "4000 mAh Littium", "Dinamic Amoled 5.0 inches", "Samsung", null, "128GB, 4GB RAM", "Samsung A01 Core", "galaxya01core-211128.jpg", "5000 ден." },
+                    { 4, "3000 mAh Littium", "OLED 6.1 inches", "Apple", null, "128GB, 8GB RAM", "IPhone 12 Pro", "iphone12pro-117264.jpg", "70000 ден." },
+                    { 5, "3500 mAh Littium", "OLED 6.3 inches", "Apple", null, "128GB, 8GB RAM", "IPhone 12 Pro Max", "iphone12promax-914433.jpg", "72000 ден." },
+                    { 6, "2500 mAh Littium", "OLED 5.4 inches", "Apple", null, "128GB, 8GB RAM", "IPhone 12 Mini", "iphone12mini-238343.jpg", "45000 ден." },
+                    { 7, "5000 mAh Littium", "Dinamic Amoled 5.0 inches", "Asus", null, "1TB, 16GB RAM", "Asus ROG", "rogphone5-960857.jpg", "48000 ден." }
                 });
 
             migrationBuilder.CreateIndex(

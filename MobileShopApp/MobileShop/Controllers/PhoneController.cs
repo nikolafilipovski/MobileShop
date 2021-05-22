@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MobileShop.Entities;
 using MobileShop.Service.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace MobileShop.Controllers
@@ -20,13 +23,15 @@ namespace MobileShop.Controllers
         // GET: PhoneController
         public ActionResult Index()
         {
-            return View();
+            var phones = _phoneService.GetPhones();
+            return View(phones);
         }
 
         // GET: PhoneController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var phone = _phoneService.GetPhoneByID(id);
+            return View(phone);
         }
 
         // GET: PhoneController/Create
@@ -38,10 +43,11 @@ namespace MobileShop.Controllers
         // POST: PhoneController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Phone phone)
         {
             try
             {
+                _phoneService.Add(phone);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -53,37 +59,46 @@ namespace MobileShop.Controllers
         // GET: PhoneController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var phone = _phoneService.GetPhoneByID(id);
+            return View(phone);
         }
 
         // POST: PhoneController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Phone phone)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _phoneService.Edit(phone);
+                    return RedirectToAction(nameof(Index));
+                }
             }
-            catch
+            catch (Exception exception)
             {
-                return View();
+
+                throw;
             }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: PhoneController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var phone = _phoneService.GetPhoneByID(id);
+            return View(phone);
         }
 
         // POST: PhoneController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Phone phone)
         {
             try
             {
+                _phoneService.Delete(phone);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -91,5 +106,6 @@ namespace MobileShop.Controllers
                 return View();
             }
         }
+
     }
 }

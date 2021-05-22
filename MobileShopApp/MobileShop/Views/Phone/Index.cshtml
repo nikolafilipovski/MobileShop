@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MobileShop.Entities.Phone>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p class="text-center">
+    <a class="btn btn-success w-25" asp-action="Create">Create New Phone</a>
+</p>
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Display)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Memory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Battery)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhotoURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manufacturer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Display)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Memory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Battery)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhotoURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer)
+            </td>
+            <td>
+                <a class="btn btn-primary" style="width:60px;" asp-action="Edit" asp-route-id="@item.PhoneID">Edit</a>
+                <a class="btn btn-info" style="width:80px;" asp-action="Details" asp-route-id="@item.PhoneID">Details</a>
+                <a class="btn btn-danger mt-1" style="width:145px;" asp-action="Delete" asp-route-id="@item.PhoneID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

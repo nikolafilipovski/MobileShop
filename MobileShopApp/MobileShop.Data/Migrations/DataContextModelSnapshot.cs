@@ -234,6 +234,9 @@ namespace MobileShop.Data.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
+                    b.Property<string>("PhotoURL")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ManufactuterID");
 
                     b.ToTable("Manufacturers");
@@ -241,21 +244,24 @@ namespace MobileShop.Data.Migrations
                     b.HasData(
                         new
                         {
-                            ManufactuterID = 8,
+                            ManufactuterID = 1,
                             Country = "South Korea",
-                            Name = "Samsung"
+                            Name = "Samsung",
+                            PhotoURL = "Logo-Samsung.png"
                         },
                         new
                         {
-                            ManufactuterID = 9,
+                            ManufactuterID = 2,
                             Country = "USA",
-                            Name = "Apple"
+                            Name = "Apple",
+                            PhotoURL = "apple.png"
                         },
                         new
                         {
-                            ManufactuterID = 10,
+                            ManufactuterID = 3,
                             Country = "Taiwan",
-                            Name = "Asus"
+                            Name = "Asus",
+                            PhotoURL = "Asus-Logo.png"
                         });
                 });
 
@@ -307,8 +313,10 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 1,
                             Battery = "4000 mAh Littium",
                             Display = "Dinamic Amoled 6.2 inches",
+                            Manufacturer = "Samsung",
                             Memory = "256GB, 8GB RAM",
                             Model = "Samsung S21",
+                            PhotoURL = "galaxys215g-336174.jpg",
                             Price = "60000 ден."
                         },
                         new
@@ -316,8 +324,10 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 2,
                             Battery = "4000 mAh Littium",
                             Display = "Dinamic Amoled 6.8 inches",
+                            Manufacturer = "Samsung",
                             Memory = "512GB, 8GB RAM",
                             Model = "Samsung Note 20",
+                            PhotoURL = "galaxynote20-398247.jpg",
                             Price = "64000 ден."
                         },
                         new
@@ -325,8 +335,10 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 3,
                             Battery = "4000 mAh Littium",
                             Display = "Dinamic Amoled 5.0 inches",
+                            Manufacturer = "Samsung",
                             Memory = "128GB, 4GB RAM",
                             Model = "Samsung A01 Core",
+                            PhotoURL = "galaxya01core-211128.jpg",
                             Price = "5000 ден."
                         },
                         new
@@ -334,8 +346,10 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 4,
                             Battery = "3000 mAh Littium",
                             Display = "OLED 6.1 inches",
+                            Manufacturer = "Apple",
                             Memory = "128GB, 8GB RAM",
                             Model = "IPhone 12 Pro",
+                            PhotoURL = "iphone12pro-117264.jpg",
                             Price = "70000 ден."
                         },
                         new
@@ -343,8 +357,10 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 5,
                             Battery = "3500 mAh Littium",
                             Display = "OLED 6.3 inches",
+                            Manufacturer = "Apple",
                             Memory = "128GB, 8GB RAM",
                             Model = "IPhone 12 Pro Max",
+                            PhotoURL = "iphone12promax-914433.jpg",
                             Price = "72000 ден."
                         },
                         new
@@ -352,8 +368,10 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 6,
                             Battery = "2500 mAh Littium",
                             Display = "OLED 5.4 inches",
+                            Manufacturer = "Apple",
                             Memory = "128GB, 8GB RAM",
                             Model = "IPhone 12 Mini",
+                            PhotoURL = "iphone12mini-238343.jpg",
                             Price = "45000 ден."
                         },
                         new
@@ -361,8 +379,10 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 7,
                             Battery = "5000 mAh Littium",
                             Display = "Dinamic Amoled 5.0 inches",
+                            Manufacturer = "Asus",
                             Memory = "1TB, 16GB RAM",
                             Model = "Asus ROG",
+                            PhotoURL = "rogphone5-960857.jpg",
                             Price = "48000 ден."
                         });
                 });

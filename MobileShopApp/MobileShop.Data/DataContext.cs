@@ -27,7 +27,9 @@ namespace MobileShop.Data
                     Display = "Dinamic Amoled 6.2 inches",
                     Battery = "4000 mAh Littium",
                     Memory = "256GB, 8GB RAM",
-                    Price = "60000 ден."
+                    Price = "60000 ден.",
+                    PhotoURL = "galaxys215g-336174.jpg",
+                    Manufacturer = "Samsung"
                 },
                 new Phone
                 {
@@ -36,7 +38,9 @@ namespace MobileShop.Data
                     Display = "Dinamic Amoled 6.8 inches",
                     Battery = "4000 mAh Littium",
                     Memory = "512GB, 8GB RAM",
-                    Price = "64000 ден."
+                    Price = "64000 ден.",
+                    PhotoURL = "galaxynote20-398247.jpg",
+                    Manufacturer = "Samsung"
                 },
                 new Phone
                 {
@@ -45,7 +49,9 @@ namespace MobileShop.Data
                     Display = "Dinamic Amoled 5.0 inches",
                     Battery = "4000 mAh Littium",
                     Memory = "128GB, 4GB RAM",
-                    Price = "5000 ден."
+                    Price = "5000 ден.",
+                    PhotoURL = "galaxya01core-211128.jpg",
+                    Manufacturer = "Samsung"
                 },
                 new Phone
                 {
@@ -54,7 +60,9 @@ namespace MobileShop.Data
                     Display = "OLED 6.1 inches",
                     Battery = "3000 mAh Littium",
                     Memory = "128GB, 8GB RAM",
-                    Price = "70000 ден."
+                    Price = "70000 ден.",
+                    PhotoURL = "iphone12pro-117264.jpg",
+                    Manufacturer = "Apple"
                 },
                 new Phone
                 {
@@ -63,7 +71,9 @@ namespace MobileShop.Data
                     Display = "OLED 6.3 inches",
                     Battery = "3500 mAh Littium",
                     Memory = "128GB, 8GB RAM",
-                    Price = "72000 ден."
+                    Price = "72000 ден.",
+                    PhotoURL = "iphone12promax-914433.jpg",
+                    Manufacturer = "Apple"
                 },
                 new Phone
                 {
@@ -72,7 +82,9 @@ namespace MobileShop.Data
                     Display = "OLED 5.4 inches",
                     Battery = "2500 mAh Littium",
                     Memory = "128GB, 8GB RAM",
-                    Price = "45000 ден."
+                    Price = "45000 ден.",
+                    PhotoURL = "iphone12mini-238343.jpg",
+                    Manufacturer = "Apple"
                 },
                 new Phone
                 {
@@ -81,7 +93,9 @@ namespace MobileShop.Data
                     Display = "Dinamic Amoled 5.0 inches",
                     Battery = "5000 mAh Littium",
                     Memory = "1TB, 16GB RAM",
-                    Price = "48000 ден."
+                    Price = "48000 ден.",
+                    PhotoURL = "rogphone5-960857.jpg",
+                    Manufacturer = "Asus"
                 }
                 );
 
@@ -92,21 +106,24 @@ namespace MobileShop.Data
             modelBuilder.Entity<Manufacturer>().HasData(
                 new Manufacturer
                 {
-                    ManufactuterID = 8,
+                    ManufactuterID = 1,
                     Name = "Samsung",
-                    Country = "South Korea"
+                    Country = "South Korea",
+                    PhotoURL = "Logo-Samsung.png"
                 },
                 new Manufacturer
                 {
-                    ManufactuterID = 9,
+                    ManufactuterID = 2,
                     Name = "Apple",
-                    Country = "USA"
+                    Country = "USA",
+                    PhotoURL = "apple.png"
                 },
                 new Manufacturer
                 {
-                    ManufactuterID = 10,
+                    ManufactuterID = 3,
                     Name = "Asus",
-                    Country = "Taiwan"
+                    Country = "Taiwan",
+                    PhotoURL = "Asus-Logo.png"
                 }
                 );
 

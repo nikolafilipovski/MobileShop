@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MobileShop.Entities;
 using MobileShop.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -20,13 +21,15 @@ namespace MobileShop.Controllers
         // GET: ManufacturerController
         public ActionResult Index()
         {
-            return View();
+            var manufacturers = _manufacturerService.GetManufacturers();
+            return View(manufacturers);
         }
 
         // GET: ManufacturerController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var manufacturer = _manufacturerService.GetManufacturerByID(id);
+            return View(manufacturer);
         }
 
         // GET: ManufacturerController/Create
@@ -38,10 +41,11 @@ namespace MobileShop.Controllers
         // POST: ManufacturerController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Manufacturer manufacturer)
         {
             try
             {
+                _manufacturerService.Add(manufacturer);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -53,37 +57,46 @@ namespace MobileShop.Controllers
         // GET: ManufacturerController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var manufacturer = _manufacturerService.GetManufacturerByID(id);
+            return View(manufacturer);
         }
 
         // POST: ManufacturerController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Manufacturer manufacturer)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _manufacturerService.Edit(manufacturer);
+                    return RedirectToAction(nameof(Index));
+                }
             }
-            catch
+            catch (Exception exception)
             {
-                return View();
+
+                throw;
             }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: ManufacturerController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var manufacturer = _manufacturerService.GetManufacturerByID(id);
+            return View(manufacturer);
         }
 
         // POST: ManufacturerController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Manufacturer manufacturer)
         {
             try
             {
+                _manufacturerService.Delete(manufacturer);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -91,5 +104,6 @@ namespace MobileShop.Controllers
                 return View();
             }
         }
+
     }
 }
