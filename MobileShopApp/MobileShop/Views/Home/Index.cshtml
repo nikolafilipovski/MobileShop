@@ -3,9 +3,9 @@
 <!-- Search section -->
 
 <form asp-action="Search">
-    <div class="row">
+    <div class="row searchBot">
         <div class="col-sm-12 col-md-6 offset-3">
-            <button class="btn searchIcon" style="">
+            <button class="btn searchIcon">
                 <i class="fas fa-search"></i>
             </button>
             <input type="text" class="form-control inputBar" />
@@ -18,22 +18,24 @@
 
 <div class="row">
     @foreach (var phone in Model)
-     {
-     <div class="col-sm-12 col-md-3 my-4">
-        <div class="flip-card" style="width: 200px; height: 250px;">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="~/img/@phone.PhotoURL" alt="Mobile phone" style="width:200px;height:250px;">
-                </div>
-                <div class="flip-card-back">
-                    <h4>@phone.Model</h4>
-                    <p>Display: @phone.Display</p>
-                    <p>Battery: @phone.Battery</p>
-                    <p>Memory: @phone.Memory</p>
-                    <p><em>@phone.Price</em></p>
+    {
+        <div class="col-sm-6 col-md-3 my-4">
+            <div class="flip-card" style="width: 200px; height: 250px;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="~/img/@phone.PhotoURL" alt="Mobile phone picture" style="width:200px;height:250px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <h4>@phone.Model</h4>
+                        <p>Display: @phone.Display</p>
+                        <p>Battery: @phone.Battery</p>
+                        <p>Memory: @phone.Memory</p>
+                        <p><em>@phone.Price</em></p>
+                        <a class="btn btn-info specBtn" asp-controller="Phone" asp-action="Details" asp-route-id="@phone.PhoneID"><i class="fas fa-info-circle"></i> Specifications</a>
+                    </div>
                 </div>
             </div>
         </div>
-     </div>
-     }
+    }
 </div>
+

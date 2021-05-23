@@ -181,3 +181,4 @@ C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\obj\Debug\netcoreapp3.1\Razor\Views\Manufacturer\Create.cshtml.g.cs
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\obj\Debug\netcoreapp3.1\Razor\Views\Manufacturer\Edit.cshtml.g.cs
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\obj\Debug\netcoreapp3.1\Razor\Views\Manufacturer\Delete.cshtml.g.cs
+C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\obj\Debug\netcoreapp3.1\Razor\Views\ContactUs\Index.cshtml.g.cs

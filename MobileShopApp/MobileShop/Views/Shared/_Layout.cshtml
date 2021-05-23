@@ -6,11 +6,12 @@
     <title>@ViewData["Title"] Mobile Shop</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/HomePage.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/font-awesome/css/all.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom mb-4 py-4">
             <div class="container">
                 @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MobileShop</a>*@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -29,18 +30,21 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Manufacturer" asp-action="Index">Manufacturers</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ContactUs" asp-action="Index">Contact Us</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-5">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted text-center py-2 bg-dark">
         <div class="container">
             &copy; 2021 - Mobile Shop
         </div>
