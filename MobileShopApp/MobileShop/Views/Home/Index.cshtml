@@ -31,7 +31,8 @@
                         <p>Battery: @phone.Battery</p>
                         <p>Memory: @phone.Memory</p>
                         <p><em>@phone.Price</em></p>
-                        <a class="btn btn-info specBtn" asp-controller="Phone" asp-action="Details" asp-route-id="@phone.PhoneID"><i class="fas fa-info-circle"></i> Specifications</a>
+                        <a class="btn btn-info btn-sm specBtn" asp-controller="Phone" asp-action="Details" asp-route-id="@phone.PhoneID"><i class="fas fa-info-circle"></i> Specifications</a>
+                        <button class="btn btn-dark btn-sm" data-toggle="modal" data-target="#phoneModal"><i class="fas fa-cash-register"></i> Order</button>
                     </div>
                 </div>
             </div>
@@ -39,3 +40,34 @@
     }
 </div>
 
+
+
+<div class="modal" id="phoneModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center">Order</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="control-label">Name:</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Address:</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">City:</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Order phone</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+    </div>
+</div>
