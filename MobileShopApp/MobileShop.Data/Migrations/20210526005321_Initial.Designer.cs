@@ -10,7 +10,7 @@ using MobileShop.Data;
 namespace MobileShop.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210522005050_Initial")]
+    [Migration("20210526005321_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -232,12 +232,12 @@ namespace MobileShop.Data.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
+                    b.Property<string>("LogoURL")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
-
-                    b.Property<string>("PhotoURL")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ManufactuterID");
 
@@ -248,23 +248,51 @@ namespace MobileShop.Data.Migrations
                         {
                             ManufactuterID = 1,
                             Country = "South Korea",
-                            Name = "Samsung",
-                            PhotoURL = "Logo-Samsung.png"
+                            LogoURL = "Logo-Samsung.png",
+                            Name = "Samsung"
                         },
                         new
                         {
                             ManufactuterID = 2,
                             Country = "USA",
-                            Name = "Apple",
-                            PhotoURL = "apple.png"
+                            LogoURL = "apple.png",
+                            Name = "Apple"
                         },
                         new
                         {
                             ManufactuterID = 3,
                             Country = "Taiwan",
-                            Name = "Asus",
-                            PhotoURL = "Asus-Logo.png"
+                            LogoURL = "Asus-Logo.png",
+                            Name = "Asus"
                         });
+                });
+
+            modelBuilder.Entity("MobileShop.Entities.Order", b =>
+                {
+                    b.Property<int>("OrderID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PhoneID")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderID");
+
+                    b.HasIndex("PhoneID");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("MobileShop.Entities.Phone", b =>
@@ -282,11 +310,11 @@ namespace MobileShop.Data.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<string>("Manufacturer")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("ManufacturerManufactuterID")
+                    b.Property<int>("ManufacturerID")
                         .HasColumnType("int");
+
+                    b.Property<string>("ManufacturerName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Memory")
                         .HasColumnType("nvarchar(50)")
@@ -305,7 +333,7 @@ namespace MobileShop.Data.Migrations
 
                     b.HasKey("PhoneID");
 
-                    b.HasIndex("ManufacturerManufactuterID");
+                    b.HasIndex("ManufacturerID");
 
                     b.ToTable("Phones");
 
@@ -315,7 +343,8 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 1,
                             Battery = "4000 mAh Littium",
                             Display = "Dinamic Amoled 6.2 inches",
-                            Manufacturer = "Samsung",
+                            ManufacturerID = 1,
+                            ManufacturerName = "Samsung",
                             Memory = "256GB, 8GB RAM",
                             Model = "Samsung S21",
                             PhotoURL = "galaxys215g-336174.jpg",
@@ -326,7 +355,8 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 2,
                             Battery = "4000 mAh Littium",
                             Display = "Dinamic Amoled 6.8 inches",
-                            Manufacturer = "Samsung",
+                            ManufacturerID = 1,
+                            ManufacturerName = "Samsung",
                             Memory = "512GB, 8GB RAM",
                             Model = "Samsung Note 20",
                             PhotoURL = "galaxynote20-398247.jpg",
@@ -337,7 +367,8 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 3,
                             Battery = "4000 mAh Littium",
                             Display = "Dinamic Amoled 5.0 inches",
-                            Manufacturer = "Samsung",
+                            ManufacturerID = 1,
+                            ManufacturerName = "Samsung",
                             Memory = "128GB, 4GB RAM",
                             Model = "Samsung A01 Core",
                             PhotoURL = "galaxya01core-211128.jpg",
@@ -348,7 +379,8 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 4,
                             Battery = "3000 mAh Littium",
                             Display = "OLED 6.1 inches",
-                            Manufacturer = "Apple",
+                            ManufacturerID = 2,
+                            ManufacturerName = "Apple",
                             Memory = "128GB, 8GB RAM",
                             Model = "IPhone 12 Pro",
                             PhotoURL = "iphone12pro-117264.jpg",
@@ -359,7 +391,8 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 5,
                             Battery = "3500 mAh Littium",
                             Display = "OLED 6.3 inches",
-                            Manufacturer = "Apple",
+                            ManufacturerID = 2,
+                            ManufacturerName = "Apple",
                             Memory = "128GB, 8GB RAM",
                             Model = "IPhone 12 Pro Max",
                             PhotoURL = "iphone12promax-914433.jpg",
@@ -370,7 +403,8 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 6,
                             Battery = "2500 mAh Littium",
                             Display = "OLED 5.4 inches",
-                            Manufacturer = "Apple",
+                            ManufacturerID = 2,
+                            ManufacturerName = "Apple",
                             Memory = "128GB, 8GB RAM",
                             Model = "IPhone 12 Mini",
                             PhotoURL = "iphone12mini-238343.jpg",
@@ -381,7 +415,8 @@ namespace MobileShop.Data.Migrations
                             PhoneID = 7,
                             Battery = "5000 mAh Littium",
                             Display = "Dinamic Amoled 5.0 inches",
-                            Manufacturer = "Asus",
+                            ManufacturerID = 3,
+                            ManufacturerName = "Asus",
                             Memory = "1TB, 16GB RAM",
                             Model = "Asus ROG",
                             PhotoURL = "rogphone5-960857.jpg",
@@ -440,11 +475,22 @@ namespace MobileShop.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MobileShop.Entities.Order", b =>
+                {
+                    b.HasOne("MobileShop.Entities.Phone", "Phone")
+                        .WithMany()
+                        .HasForeignKey("PhoneID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("MobileShop.Entities.Phone", b =>
                 {
-                    b.HasOne("MobileShop.Entities.Manufacturer", null)
+                    b.HasOne("MobileShop.Entities.Manufacturer", "Manufacturer")
                         .WithMany("Phones")
-                        .HasForeignKey("ManufacturerManufactuterID");
+                        .HasForeignKey("ManufacturerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

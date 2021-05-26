@@ -25,7 +25,11 @@ namespace MobileShop.Controllers
         public IActionResult Index()
         {
             var phones = _phoneService.GetPhones();
-            return View(phones);
+            var homeViewModel = new HomeViewModel()
+            {
+                AllPhones = phones
+            };
+            return View(homeViewModel);
         }
 
         public IActionResult Privacy()

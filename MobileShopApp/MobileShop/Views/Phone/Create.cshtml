@@ -38,16 +38,21 @@
             </div>
             <div class="form-group">
                 <label asp-for="PhotoURL" class="control-label"></label>
-                <input asp-for="PhotoURL" class="form-control" />
+                <input type="file" #file accept="image/*" asp-for="PhotoURL" class="form-control" />
                 <span asp-validation-for="PhotoURL" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Manufacturer" class="control-label"></label>
-                <input asp-for="Manufacturer" class="form-control" />
-                <span asp-validation-for="Manufacturer" class="text-danger"></span>
+                <label asp-for="ManufacturerName" class="control-label"></label>
+                <input asp-for="ManufacturerName" class="form-control" />
+                <span asp-validation-for="ManufacturerName" class="text-danger"></span>
             </div>
-            <div class="form-group text-center">
-                <input type="submit" value="Create" class="btn btn-primary w-25" />
+            <div class="form-group">
+                <label asp-for="ManufacturerID" class="control-label"></label>
+                <select asp-for="ManufacturerID" class="form-control" asp-items="ViewBag.ManufacturerList"></select>
+                <input asp-for="ManufacturerName" class="form-control" hidden />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -59,5 +64,7 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <script src="~/js/site.js"></script>
 }
+
+
+

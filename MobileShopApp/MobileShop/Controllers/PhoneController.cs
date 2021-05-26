@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MobileShop.Entities;
+using MobileShop.Models;
 using MobileShop.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,12 @@ namespace MobileShop.Controllers
     public class PhoneController : Controller
     {
         private readonly IPhoneService _phoneService;
+        private readonly IManufacturerService _manufacturerService;
 
-        public PhoneController(IPhoneService phoneService)
+        public PhoneController(IPhoneService phoneService, IManufacturerService manufacturerService)
         {
             _phoneService = phoneService;
+            _manufacturerService = manufacturerService;
         }
 
         // GET: PhoneController
@@ -37,6 +40,9 @@ namespace MobileShop.Controllers
         // GET: PhoneController/Create
         public ActionResult Create()
         {
+            var manufacturers = _manufacturerService.GetManufacturers();
+            var dropdown = _phoneService.ManufacturerDropdown(manufacturers);
+            ViewBag.ManufacturerList = dropdown;
             return View();
         }
 
@@ -60,6 +66,9 @@ namespace MobileShop.Controllers
         public ActionResult Edit(int id)
         {
             var phone = _phoneService.GetPhoneByID(id);
+            var manufacturers = _manufacturerService.GetManufacturers();
+            var dropdown = _phoneService.ManufacturerDropdown(manufacturers);
+            ViewBag.ManufacturerList = dropdown;
             return View(phone);
         }
 

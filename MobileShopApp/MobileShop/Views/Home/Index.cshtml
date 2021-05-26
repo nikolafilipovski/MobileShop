@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MobileShop.Entities.Phone>
+﻿@model MobileShop.Models.HomeViewModel
 
 <!-- Search section -->
 
@@ -17,7 +17,7 @@
 <!-- Phones section -->
 
 <div class="row">
-    @foreach (var phone in Model)
+    @foreach (var phone in Model.AllPhones)
     {
         <div class="col-sm-6 col-md-3 my-4">
             <div class="flip-card" style="width: 200px; height: 250px;">
@@ -69,5 +69,6 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
+        </div>
     </div>
 </div>

@@ -24,7 +24,13 @@ namespace MobileShop.Entities
 
         [StringLength(50)]
         public string Battery { get; set; }
+
+        [Display(Name = "Photo")]
         public string PhotoURL { get; set; }
-        public string Manufacturer { get; set; }
+
+        [Display(Name = "Manufacturer")]
+        public string ManufacturerName { get; set; }
+        public int ManufacturerID { get; set; }
+        public Manufacturer Manufacturer { get; set; }
     }
 }

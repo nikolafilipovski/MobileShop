@@ -54,7 +54,7 @@ namespace MobileShop.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(maxLength: 20, nullable: true),
                     Country = table.Column<string>(maxLength: 20, nullable: true),
-                    PhotoURL = table.Column<string>(nullable: true)
+                    LogoURL = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -179,42 +179,69 @@ namespace MobileShop.Data.Migrations
                     Memory = table.Column<string>(maxLength: 50, nullable: true),
                     Battery = table.Column<string>(maxLength: 50, nullable: true),
                     PhotoURL = table.Column<string>(nullable: true),
-                    Manufacturer = table.Column<string>(nullable: true),
-                    ManufacturerManufactuterID = table.Column<int>(nullable: true)
+                    ManufacturerName = table.Column<string>(nullable: true),
+                    ManufacturerID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Phones", x => x.PhoneID);
                     table.ForeignKey(
-                        name: "FK_Phones_Manufacturers_ManufacturerManufactuterID",
-                        column: x => x.ManufacturerManufactuterID,
+                        name: "FK_Phones_Manufacturers_ManufacturerID",
+                        column: x => x.ManufacturerID,
                         principalTable: "Manufacturers",
                         principalColumn: "ManufactuterID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Orders",
+                columns: table => new
+                {
+                    OrderID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FullName = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(maxLength: 50, nullable: true),
+                    City = table.Column<string>(maxLength: 20, nullable: true),
+                    PhoneID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Orders", x => x.OrderID);
+                    table.ForeignKey(
+                        name: "FK_Orders_Phones_PhoneID",
+                        column: x => x.PhoneID,
+                        principalTable: "Phones",
+                        principalColumn: "PhoneID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
                 table: "Manufacturers",
-                columns: new[] { "ManufactuterID", "Country", "Name", "PhotoURL" },
-                values: new object[,]
-                {
-                    { 1, "South Korea", "Samsung", "Logo-Samsung.png" },
-                    { 2, "USA", "Apple", "apple.png" },
-                    { 3, "Taiwan", "Asus", "Asus-Logo.png" }
-                });
+                columns: new[] { "ManufactuterID", "Country", "LogoURL", "Name" },
+                values: new object[] { 1, "South Korea", "Logo-Samsung.png", "Samsung" });
+
+            migrationBuilder.InsertData(
+                table: "Manufacturers",
+                columns: new[] { "ManufactuterID", "Country", "LogoURL", "Name" },
+                values: new object[] { 2, "USA", "apple.png", "Apple" });
+
+            migrationBuilder.InsertData(
+                table: "Manufacturers",
+                columns: new[] { "ManufactuterID", "Country", "LogoURL", "Name" },
+                values: new object[] { 3, "Taiwan", "Asus-Logo.png", "Asus" });
 
             migrationBuilder.InsertData(
                 table: "Phones",
-                columns: new[] { "PhoneID", "Battery", "Display", "Manufacturer", "ManufacturerManufactuterID", "Memory", "Model", "PhotoURL", "Price" },
+                columns: new[] { "PhoneID", "Battery", "Display", "ManufacturerID", "ManufacturerName", "Memory", "Model", "PhotoURL", "Price" },
                 values: new object[,]
                 {
-                    { 1, "4000 mAh Littium", "Dinamic Amoled 6.2 inches", "Samsung", null, "256GB, 8GB RAM", "Samsung S21", "galaxys215g-336174.jpg", "60000 ден." },
-                    { 2, "4000 mAh Littium", "Dinamic Amoled 6.8 inches", "Samsung", null, "512GB, 8GB RAM", "Samsung Note 20", "galaxynote20-398247.jpg", "64000 ден." },
-                    { 3, "4000 mAh Littium", "Dinamic Amoled 5.0 inches", "Samsung", null, "128GB, 4GB RAM", "Samsung A01 Core", "galaxya01core-211128.jpg", "5000 ден." },
-                    { 4, "3000 mAh Littium", "OLED 6.1 inches", "Apple", null, "128GB, 8GB RAM", "IPhone 12 Pro", "iphone12pro-117264.jpg", "70000 ден." },
-                    { 5, "3500 mAh Littium", "OLED 6.3 inches", "Apple", null, "128GB, 8GB RAM", "IPhone 12 Pro Max", "iphone12promax-914433.jpg", "72000 ден." },
-                    { 6, "2500 mAh Littium", "OLED 5.4 inches", "Apple", null, "128GB, 8GB RAM", "IPhone 12 Mini", "iphone12mini-238343.jpg", "45000 ден." },
-                    { 7, "5000 mAh Littium", "Dinamic Amoled 5.0 inches", "Asus", null, "1TB, 16GB RAM", "Asus ROG", "rogphone5-960857.jpg", "48000 ден." }
+                    { 1, "4000 mAh Littium", "Dinamic Amoled 6.2 inches", 1, "Samsung", "256GB, 8GB RAM", "Samsung S21", "galaxys215g-336174.jpg", "60000 ден." },
+                    { 2, "4000 mAh Littium", "Dinamic Amoled 6.8 inches", 1, "Samsung", "512GB, 8GB RAM", "Samsung Note 20", "galaxynote20-398247.jpg", "64000 ден." },
+                    { 3, "4000 mAh Littium", "Dinamic Amoled 5.0 inches", 1, "Samsung", "128GB, 4GB RAM", "Samsung A01 Core", "galaxya01core-211128.jpg", "5000 ден." },
+                    { 4, "3000 mAh Littium", "OLED 6.1 inches", 2, "Apple", "128GB, 8GB RAM", "IPhone 12 Pro", "iphone12pro-117264.jpg", "70000 ден." },
+                    { 5, "3500 mAh Littium", "OLED 6.3 inches", 2, "Apple", "128GB, 8GB RAM", "IPhone 12 Pro Max", "iphone12promax-914433.jpg", "72000 ден." },
+                    { 6, "2500 mAh Littium", "OLED 5.4 inches", 2, "Apple", "128GB, 8GB RAM", "IPhone 12 Mini", "iphone12mini-238343.jpg", "45000 ден." },
+                    { 7, "5000 mAh Littium", "Dinamic Amoled 5.0 inches", 3, "Asus", "1TB, 16GB RAM", "Asus ROG", "rogphone5-960857.jpg", "48000 ден." }
                 });
 
             migrationBuilder.CreateIndex(
@@ -257,9 +284,14 @@ namespace MobileShop.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Phones_ManufacturerManufactuterID",
+                name: "IX_Orders_PhoneID",
+                table: "Orders",
+                column: "PhoneID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Phones_ManufacturerID",
                 table: "Phones",
-                column: "ManufacturerManufactuterID");
+                column: "ManufacturerID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -280,13 +312,16 @@ namespace MobileShop.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Phones");
+                name: "Orders");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Phones");
 
             migrationBuilder.DropTable(
                 name: "Manufacturers");

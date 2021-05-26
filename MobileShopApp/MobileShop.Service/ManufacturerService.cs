@@ -1,4 +1,5 @@
-﻿using MobileShop.Entities;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using MobileShop.Entities;
 using MobileShop.Repository.Interfaces;
 using MobileShop.Service.Interfaces;
 using System;
@@ -42,5 +43,6 @@ namespace MobileShop.Service
             var result = _manufacturerRepository.GetManufacturers();
             return result;
         }
+
     }
 }

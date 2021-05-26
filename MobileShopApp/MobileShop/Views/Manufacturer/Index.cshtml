@@ -17,7 +17,7 @@
                 @Html.DisplayNameFor(model => model.Country)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhotoURL)
+                @Html.DisplayNameFor(model => model.LogoURL)
             </th>
             <th></th>
         </tr>
@@ -32,7 +32,7 @@
                 @Html.DisplayFor(modelItem => item.Country)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PhotoURL)
+                @Html.DisplayFor(modelItem => item.LogoURL)
             </td>
             <td>
                 <a class="btn btn-primary" style="width:60px;" asp-action="Edit" asp-route-id="@item.ManufactuterID">Edit</a>
@@ -51,7 +51,7 @@
      {
         <div class="col-sm-12 col-md-4">
             <div>
-                <img src="~/img/@manufacturer.PhotoURL" alt="Manufaturer logo" class="img-thumbnail img-fluid" style="width:350px;height:250px;" />
+                <img src="~/img/@manufacturer.LogoURL" alt="Manufaturer logo" class="img-thumbnail img-fluid" style="width:350px;height:250px;" />
             </div>
         </div>
      }

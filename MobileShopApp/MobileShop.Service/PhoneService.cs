@@ -1,4 +1,5 @@
-﻿using MobileShop.Entities;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using MobileShop.Entities;
 using MobileShop.Repository.Interfaces;
 using MobileShop.Service.Interfaces;
 using System;
@@ -42,5 +43,24 @@ namespace MobileShop.Service
             var result = _phoneRepository.GetPhones();
             return result;
         }
+
+        #region Dropdown
+
+        public IEnumerable<SelectListItem> ManufacturerDropdown(IEnumerable<Manufacturer> manufacturers)
+        {
+            List<SelectListItem> Manufacturers = new List<SelectListItem>()
+            {
+                new SelectListItem() { Value = "0", Text = "Select a manufacturer ..."}
+            };
+
+            foreach (var item in manufacturers)
+            {
+                Manufacturers.Add(new SelectListItem() { Value = item.ManufactuterID.ToString(), Text = item.Name, Selected = false });
+            }
+            return Manufacturers;
+        }
+
+        #endregion
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using MobileShop.Entities;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using MobileShop.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,5 +13,6 @@ namespace MobileShop.Service.Interfaces
         void Delete(Phone phone);
         Phone GetPhoneByID(int id);
         IEnumerable<Phone> GetPhones();
+        IEnumerable<SelectListItem> ManufacturerDropdown(IEnumerable<Manufacturer> manufacturers);
     }
 }
