@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace MobileShop.Entities
@@ -29,8 +30,12 @@ namespace MobileShop.Entities
         public string PhotoURL { get; set; }
 
         [Display(Name = "Manufacturer")]
-        public string ManufacturerName { get; set; }
         public int ManufacturerID { get; set; }
+
         public Manufacturer Manufacturer { get; set; }
+
+        [Display(Name = "Manufacturer")]
+        public string ManufacturerName { get; set; }
+
     }
 }

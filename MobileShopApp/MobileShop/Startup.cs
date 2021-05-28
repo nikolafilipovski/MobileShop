@@ -41,10 +41,12 @@ namespace MobileShop
             // Repositories
             services.AddTransient<IPhoneRepository, PhoneRepository>();
             services.AddTransient<IManufacturerRepository, ManufacturerRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
 
             // Services
             services.AddTransient<IPhoneService, PhoneService>();
             services.AddTransient<IManufacturerService, ManufacturerService>();
+            services.AddTransient<IOrderService, OrderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

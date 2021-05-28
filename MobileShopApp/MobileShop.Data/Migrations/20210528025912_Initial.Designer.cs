@@ -10,7 +10,7 @@ using MobileShop.Data;
 namespace MobileShop.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210526005321_Initial")]
+    [Migration("20210528025912_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

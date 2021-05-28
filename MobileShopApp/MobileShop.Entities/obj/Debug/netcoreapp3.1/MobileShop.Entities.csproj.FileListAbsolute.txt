@@ -9,3 +9,4 @@ C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Entities\obj\Debug\netcoreapp3.1\MobileShop.Entities.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Entities\obj\Debug\netcoreapp3.1\MobileShop.Entities.pdb
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Entities\obj\Debug\netcoreapp3.1\MobileShop.Entities.genruntimeconfig.cache
+C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Entities\obj\Debug\netcoreapp3.1\MobileShop.Entities.csproj.AssemblyReference.cache

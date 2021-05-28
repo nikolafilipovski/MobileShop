@@ -33,9 +33,11 @@ namespace MobileShop.Models
         public string PhotoURL { get; set; }
 
         [Display(Name = "Manufacturer")]
-        public string ManufacturerName { get; set; }
         public int ManufacturerID { get; set; }
         public Manufacturer Manufacturer { get; set; }
+
+        [Display(Name = "Manufacturer")]
+        public string ManufacturerName { get; set; }
 
         #endregion
 

@@ -179,8 +179,8 @@ namespace MobileShop.Data.Migrations
                     Memory = table.Column<string>(maxLength: 50, nullable: true),
                     Battery = table.Column<string>(maxLength: 50, nullable: true),
                     PhotoURL = table.Column<string>(nullable: true),
-                    ManufacturerName = table.Column<string>(nullable: true),
-                    ManufacturerID = table.Column<int>(nullable: false)
+                    ManufacturerID = table.Column<int>(nullable: false),
+                    ManufacturerName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

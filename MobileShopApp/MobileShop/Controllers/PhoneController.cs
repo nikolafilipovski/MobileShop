@@ -49,17 +49,19 @@ namespace MobileShop.Controllers
         // POST: PhoneController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Phone phone)
+        public ActionResult Create(PhoneViewModel model)
         {
-            try
-            {
-                _phoneService.Add(phone);
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            var phone = new Phone();
+            phone.Battery = model.Battery;
+            phone.Display = model.Display;
+            phone.ManufacturerID = model.ManufacturerID;
+            phone.Memory = model.Memory;
+            phone.Model = model.Model;
+            phone.Price = model.Price;
+            phone.ManufacturerName = model.ManufacturerName;
+
+            _phoneService.Add(phone);
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: PhoneController/Edit/5
@@ -114,6 +116,13 @@ namespace MobileShop.Controllers
             {
                 return View();
             }
+        }
+
+        [HttpPost]
+        public ActionResult CreateAJAX(Phone phone)
+        {
+             _phoneService.Add(phone);
+             return RedirectToAction(nameof(Index));
         }
 
     }

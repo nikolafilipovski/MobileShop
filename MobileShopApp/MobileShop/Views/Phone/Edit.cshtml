@@ -4,9 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>Phone</h4>
+<h3>Edit phone</h3>
 <hr />
 <div class="row">
     <div class="col-sm-12 col-md-6 offset-3">
@@ -44,24 +42,19 @@
                 <span asp-validation-for="PhotoURL" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ManufacturerName" class="control-label"></label>
-                <input asp-for="ManufacturerName" class="form-control" />
-                <span asp-validation-for="ManufacturerName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="ManufacturerID" class="control-label"></label>
-                <select asp-for="ManufacturerID" class="form-control" asp-items="ViewBag.ManufacturerID"></select>
+                <select asp-for="ManufacturerID" class="form-control" asp-items="ViewBag.ManufacturerList"></select>
                 <span asp-validation-for="ManufacturerID" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group text-center">
+                <input type="submit" value="Save" class="btn btn-primary w-50" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-dark" style="width:8rem;" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
