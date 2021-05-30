@@ -119,10 +119,10 @@ namespace MobileShop.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateAJAX(Phone phone)
+        public JsonResult CreateAJAX(Phone phone)
         {
              _phoneService.Add(phone);
-             return RedirectToAction(nameof(Index));
+            return Json(new { data = phone } );
         }
 
     }

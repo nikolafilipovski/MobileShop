@@ -37,7 +37,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="PhotoURL" class="control-label"></label>
-                <input asp-for="PhotoURL" class="form-control" />
+                <input type="file" accept="image/*" id="mobileImage" />
                 <span asp-validation-for="PhotoURL" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -46,7 +46,7 @@
                 <input asp-for="ManufacturerName" hidden class="form-control" />
             </div>
             <div class="form-group text-center">
-                <input type="submit" value="Create" class="btn btn-primary w-50" id="ajax" />
+                <input type="submit" value="Create" class="btn btn-primary w-50" id="addManufacturer" />
             </div>
         </form>
     </div>

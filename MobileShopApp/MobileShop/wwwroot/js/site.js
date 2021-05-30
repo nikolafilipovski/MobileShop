@@ -1,17 +1,17 @@
-﻿$("#ajax").click(function () {
+﻿$("#addManufacturer").click(function () {
     var data = {
-        ManufacturerID: $("#ManufacturerID"),
-        ManufacturerName: $("#ManufacturerName"),
+        ManufacturerID: $("#ManufacturerID").val(),
+        ManufacturerName: $("#ManufacturerName").val(),
     };
 
     $.ajax({
-        url: '/Phone/Create',
+        url: '/Phone/CreateAJAX',
         type: 'POST',
         data: data,
         contentType: 'application/json; charset=utf-8',
         success: function (data) {
-            $("#ManufacturerID").val();
-            $("#ManufacturerName").val();
+            $("#ManufacturerID").val(),
+            $("#ManufacturerName").val()
         },
         error: function () {
             alert("error");
