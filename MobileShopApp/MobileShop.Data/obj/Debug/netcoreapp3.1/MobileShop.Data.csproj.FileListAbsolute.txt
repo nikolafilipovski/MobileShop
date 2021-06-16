@@ -5,6 +5,7 @@ C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Data\bin\Debug\netcoreapp3.1\MobileShop.Data.pdb
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Data\bin\Debug\netcoreapp3.1\MobileShop.Entities.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Data\bin\Debug\netcoreapp3.1\MobileShop.Entities.pdb
+C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Data\obj\Debug\netcoreapp3.1\MobileShop.Data.csproj.AssemblyReference.cache
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Data\obj\Debug\netcoreapp3.1\MobileShop.Data.AssemblyInfoInputs.cache
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Data\obj\Debug\netcoreapp3.1\MobileShop.Data.AssemblyInfo.cs
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Data\obj\Debug\netcoreapp3.1\MobileShop.Data.csproj.CoreCompileInputs.cache
@@ -12,4 +13,3 @@ C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Data\obj\Debug\netcoreapp3.1\MobileShop.Data.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Data\obj\Debug\netcoreapp3.1\MobileShop.Data.pdb
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Data\obj\Debug\netcoreapp3.1\MobileShop.Data.genruntimeconfig.cache
-C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop.Data\obj\Debug\netcoreapp3.1\MobileShop.Data.csproj.AssemblyReference.cache

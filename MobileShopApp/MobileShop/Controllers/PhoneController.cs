@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using MobileShop.Entities;
 using MobileShop.Models;
 using MobileShop.Service.Interfaces;
@@ -16,11 +17,13 @@ namespace MobileShop.Controllers
     {
         private readonly IPhoneService _phoneService;
         private readonly IManufacturerService _manufacturerService;
+        private readonly ILogger<PhoneController> _logger;
 
-        public PhoneController(IPhoneService phoneService, IManufacturerService manufacturerService)
+        public PhoneController(IPhoneService phoneService, IManufacturerService manufacturerService, ILogger<PhoneController> logger)
         {
             _phoneService = phoneService;
             _manufacturerService = manufacturerService;
+            _logger = logger;
         }
 
         // GET: PhoneController
@@ -61,6 +64,7 @@ namespace MobileShop.Controllers
             phone.ManufacturerName = model.ManufacturerName;
 
             _phoneService.Add(phone);
+            _logger.LogInformation("New phone was created.");
             return RedirectToAction(nameof(Index));
         }
 
@@ -110,6 +114,7 @@ namespace MobileShop.Controllers
             try
             {
                 _phoneService.Delete(phone);
+                _logger.LogInformation("One phone was deleted.");
                 return RedirectToAction(nameof(Index));
             }
             catch

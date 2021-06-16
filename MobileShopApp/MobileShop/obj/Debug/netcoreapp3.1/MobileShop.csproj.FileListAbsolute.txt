@@ -1,3 +1,4 @@
+C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\wwwroot\nlog.config
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\libman.json
@@ -61,6 +62,9 @@ C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
@@ -141,6 +145,7 @@ C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\MobileShop.Repository.pdb
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\MobileShop.Service.pdb
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\bin\Debug\netcoreapp3.1\MobileShop.Entities.pdb
+C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\obj\Debug\netcoreapp3.1\MobileShop.csproj.AssemblyReference.cache
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\obj\Debug\netcoreapp3.1\MobileShop.AssemblyInfoInputs.cache
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\obj\Debug\netcoreapp3.1\MobileShop.AssemblyInfo.cs
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\obj\Debug\netcoreapp3.1\MobileShop.csproj.CoreCompileInputs.cache
@@ -181,4 +186,3 @@ C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\obj\Debug\netcoreapp3.1\MobileShop.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\obj\Debug\netcoreapp3.1\MobileShop.pdb
 C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\obj\Debug\netcoreapp3.1\MobileShop.genruntimeconfig.cache
-C:\Users\Matej & Marko\Desktop\Code Academy\MobileShop\MobileShopApp\MobileShop\obj\Debug\netcoreapp3.1\MobileShop.csproj.AssemblyReference.cache

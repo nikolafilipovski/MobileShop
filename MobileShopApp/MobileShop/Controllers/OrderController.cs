@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using MobileShop.Entities;
 using MobileShop.Service.Interfaces;
 using System;
@@ -12,10 +13,12 @@ namespace MobileShop.Controllers
     public class OrderController : Controller
     {
         private readonly IOrderService _orderService;
+        private readonly ILogger<OrderController> _logger;
 
-        public OrderController(IOrderService orderService)
+        public OrderController(IOrderService orderService, ILogger<OrderController> logger)
         {
             _orderService = orderService;
+            _logger = logger;
         }
 
         // GET: OrderController
@@ -44,6 +47,7 @@ namespace MobileShop.Controllers
             try
             {
                 _orderService.Add(order);
+                _logger.LogInformation("New order was created.");
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -90,6 +94,7 @@ namespace MobileShop.Controllers
             try
             {
                 _orderService.Delete(order);
+                _logger.LogInformation("An order was deleted.");
                 return RedirectToAction(nameof(Index));
             }
             catch

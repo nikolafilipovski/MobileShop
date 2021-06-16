@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sRRh+zotVDHM6hU+f+ICdvvPgdkXmjGB40dnYj4+AABcJnv7jXQI4tzcmC3hU5TKbOe3ij7kZDhu5fWIsXvjnQ==",
+  "dgSpecHash": "smfezlVw7yefI4QX+ZeU7iroI8AyWnqQuc+R+Wbnw+4PrGV3+74dk9/mraajUe7ZBx88K0pp8jMq/SdeUPujTQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\MobileShop\\MobileShopApp\\MobileShop.Data\\MobileShop.Data.csproj",
   "expectedPackageFiles": [
@@ -45,6 +45,9 @@
     "C:\\Users\\Matej & Marko\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Matej & Marko\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Matej & Marko\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Matej & Marko\\.nuget\\packages\\nlog\\4.7.9\\nlog.4.7.9.nupkg.sha512",
+    "C:\\Users\\Matej & Marko\\.nuget\\packages\\nlog.extensions.logging\\1.7.2\\nlog.extensions.logging.1.7.2.nupkg.sha512",
+    "C:\\Users\\Matej & Marko\\.nuget\\packages\\nlog.web.aspnetcore\\4.12.0\\nlog.web.aspnetcore.4.12.0.nupkg.sha512",
     "C:\\Users\\Matej & Marko\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Matej & Marko\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Matej & Marko\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
