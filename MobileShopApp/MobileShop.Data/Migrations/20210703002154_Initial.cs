@@ -216,19 +216,33 @@ namespace MobileShop.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Manufacturers",
-                columns: new[] { "ManufactuterID", "Country", "LogoURL", "Name" },
-                values: new object[] { 1, "South Korea", "Logo-Samsung.png", "Samsung" });
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "b4280b6a-0613-4cbd-a9e6-f1701e926e71", "a68e7146-43b0-4e85-a2ef-d90d2f61efbe", "admin", "ADMIN" },
+                    { "b4280b6a-0613-4cbd-a9e6-f1701e926e72", "a3a9d5d4-5ca4-447c-883b-429e44eb9c16", "guest", "GUEST" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "b4280b6a-0613-4cbd-a9e6-f1701e926e71", 0, "c8554266-b401-4519-9aeb-a9283053fc58", "admin@mobile.com", true, false, null, "ADMIN@MOBILE.COM", "ADMIN@MOBILE.COM", "AQAAAAEAACcQAAAAEPcNcK+qgDZmTXoOMuFUVRHx8geQeiSXFt2pUpUAeadTojOQ9+J9f7eDD9VNjbcpcQ==", null, false, "", false, "admin@mobile.com" });
 
             migrationBuilder.InsertData(
                 table: "Manufacturers",
                 columns: new[] { "ManufactuterID", "Country", "LogoURL", "Name" },
-                values: new object[] { 2, "USA", "apple.png", "Apple" });
+                values: new object[,]
+                {
+                    { 1, "South Korea", "Logo-Samsung.png", "Samsung" },
+                    { 2, "USA", "apple.png", "Apple" },
+                    { 3, "Taiwan", "Asus-Logo.png", "Asus" }
+                });
 
             migrationBuilder.InsertData(
-                table: "Manufacturers",
-                columns: new[] { "ManufactuterID", "Country", "LogoURL", "Name" },
-                values: new object[] { 3, "Taiwan", "Asus-Logo.png", "Asus" });
+                table: "AspNetUserRoles",
+                columns: new[] { "UserId", "RoleId" },
+                values: new object[] { "b4280b6a-0613-4cbd-a9e6-f1701e926e71", "b4280b6a-0613-4cbd-a9e6-f1701e926e71" });
 
             migrationBuilder.InsertData(
                 table: "Phones",

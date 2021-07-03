@@ -34,6 +34,7 @@ namespace MobileShop
                 options.UseSqlServer(
                     Configuration.GetConnectionString("MobileShopConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<DataContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -47,6 +48,7 @@ namespace MobileShop
             services.AddTransient<IPhoneService, PhoneService>();
             services.AddTransient<IManufacturerService, ManufacturerService>();
             services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

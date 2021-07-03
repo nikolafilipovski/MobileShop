@@ -1,0 +1,49 @@
+﻿@model IEnumerable<MobileShop.Models.UserModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 class="text-center">User</h3>
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th colspan="2">
+                <a asp-action="Create" class="btn btn-block btn-success">
+                    <i class="fas fa-user"></i> &nbsp; Create User
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a class="btn btn-secondary mb-1" style="width:5rem;" asp-action="Edit" asp-route-id="@item.UserID">Edit</a>
+                    <a class="btn btn-info mb-1" style="width:5rem;" asp-action="Details" asp-route-id="@item.UserID">Details</a>
+                    <a class="btn btn-danger" style="width:5rem;" asp-action="Delete" asp-route-id="@item.UserID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

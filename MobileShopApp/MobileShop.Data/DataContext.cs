@@ -137,6 +137,50 @@ namespace MobileShop.Data
 
             #endregion
 
+            #region Admin
+
+            const string ADMIN_ID = "b4280b6a-0613-4cbd-a9e6-f1701e926e71";
+            const string ROLE_ID = ADMIN_ID;
+            const string password = "admin123";
+
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole
+                {
+                    Id = ROLE_ID,
+                    Name = "admin",
+                    NormalizedName = "ADMIN"
+                },
+                new IdentityRole
+                {
+                    Id = "b4280b6a-0613-4cbd-a9e6-f1701e926e72",
+                    Name = "guest",
+                    NormalizedName = "GUEST"
+                }
+            );
+
+            var hasher = new PasswordHasher<IdentityUser>();
+
+            modelBuilder.Entity<IdentityUser>().HasData(new IdentityUser
+            {
+                Id = ADMIN_ID,
+                UserName = "admin@mobile.com",
+                NormalizedUserName = "ADMIN@MOBILE.COM",
+                Email = "admin@mobile.com",
+                NormalizedEmail = "ADMIN@MOBILE.COM",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, password),
+                SecurityStamp = string.Empty,
+                ConcurrencyStamp = "c8554266-b401-4519-9aeb-a9283053fc58"
+            });
+
+            modelBuilder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
+            {
+                RoleId = ROLE_ID,
+                UserId = ADMIN_ID
+            });
+
+            #endregion
+
             base.OnModelCreating(modelBuilder);
         }
 
